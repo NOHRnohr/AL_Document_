@@ -1,11 +1,11 @@
 #!/usr/bin/env perl
 
 # LaTeX
-$latex = 'platex --kanji=sjis -synctex=1 -halt-on-error -file-line-error %O %S';
+$latex = 'platex --kanji=sjis -synctex=1 -halt-on-error -file-line-error -f %O %S';
 $max_repeat = 5;
 
 # BibTeX
-$bibtex = 'pbibtex --kanji=sjis %O %S';
+$bibtex = 'pbibtex --kanji=sjis -f %O %S';
 $biber = 'biber --bblencoding=sjis -u -U --output_safechars %O %S';
 
 # index
