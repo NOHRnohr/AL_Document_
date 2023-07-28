@@ -119,7 +119,7 @@ Kyusyu Institute University}
 
 \subsection{数独の手筋}
 
-数独にはパズルを解く上で便利な手筋が知られている．手筋には初級，中級，上級のものがある．
+数独にはパズルを解く上で便利な手筋が知られている．手筋には初級，中級，上級のものがある~\cite{数独通信40}．
 本研究が取り扱う手筋として，\emph{ブロッケン}，\emph{レッツミー}，\emph{マスミ}，\emph{いずれにしても理論}，\emph{予約}，\emph{井桁理論}がある~\cite{数独通信43}．この節では，そのうち本稿で特に重要視する一部の手筋について説明する．
 
 	\subsubsection{レッツミー}
@@ -243,9 +243,8 @@ Kyusyu Institute University}
 　	\begin{table}[tb]
 		\caption{各手筋の分類と難易度点数}
 		\label{solution_point}
-		\centering
 			\begin{tabular}{ccr}
-			\hline
+			\hline\hline
 			手筋 & 難易度 & 点数[点]\\
 			\hline
 ブロッケン & 初級 & 0\\ 
@@ -277,9 +276,8 @@ Kyusyu Institute University}
 	\begin{table}[tb]
 		\caption{中級問題に対する難易度点数}
 		\label{study_medium}
-		\centering
 			\begin{tabular}{crcr}
-			\hline
+			\hline\hline
 			問題 & ours[点] & known[点] & 公式難易度\\
 			\hline
 問題16 & 1 & 41 & 4\\
@@ -312,9 +310,8 @@ Kyusyu Institute University}
 	\begin{table}[tb]
 		\caption{上級問題に対する難易度点数}
 		\label{study_hard}
-		\centering
 			\begin{tabular}{crcr}
-			\hline
+			\hline\hline
 			問題 & ours[点] & known[点] & 公式難易度\\
 			\hline
 問題4 & 7 & 185 & 7\\
@@ -356,12 +353,11 @@ Kyusyu Institute University}
 これより，マスミの点数が小さくなるほど，相関係数が1に近づいている事が分かる．これはマスミの点数がレッツミーと比べて高いことを示している．しかし，レッツミーとマスミはどちらも中級問題から使われ始める手筋ではあるが，マスミの方がレッツミーよりも比較的難しい．レッツミーは中級問題の一番簡単な問題でも出てくるほど中級問題では頻出であるが，マスミは中級問題の中でも難しい問題にしか出てこないことが分かっている．例えば今回入力した「てごろな数独1」の問題では，マスミを使わないと解けない問題は公式の難易度が6であった．よって，マスミの手筋の難易度点数を下げると，マスミを使う問題が中級問題の中で難しい問題に位置しなくなってしまう．これを避けるには，使用したレッツミーの回数が少ないほど，マスミの点数を上げるといった対策が考えられる．これにより，レッツミーの使用回数が少ないマスミを使う中級問題の点数は比較的高いままで，複数回のレッツミーとマスミを使う問題の難易度点数を下げられ，相関係数が高くなると考えられる．
 
 %値を変える
-	\begin{table}[tb]
+\begin{table}[tb]
 		\caption{マスミの点数による相関係数の変化}
 		\label{table:masumi}
-		\centering
-			\begin{tabular}{cr}
-			\hline
+		\hbox to\hsize{\hfil
+			\begin{tabular}[t]{cr}\hline\hline
 			マスミの点数 & 相関係数\\
 			\hline
 	1 & 0.84\\
@@ -374,9 +370,8 @@ Kyusyu Institute University}
 	8 & 0.65 \\
 	9 & 0.63 \\
 	10 & 0.62 \\
-	11 & 0.60 \\
-			\hline
-	 	\end{tabular}
+	11 & 0.60 \\\hline
+	 	\end{tabular}\hfil}
 	\end{table}
 
 また，同じ種類の手筋で，かつ注目する領域が同じで注目する数字の種類もしくはマスの数が同じであっても，数字の配置や手筋が成立する場所によって，その手筋の発見のしやすさが変わってくることがある．例えば\figref{sample_rettumi_easy}では，一番上の一番右のマスに1が入ることをレッツミーで見つけるには，2つの1を見る必要がある．一方，\figref{sample_rettumi_difficult}では，一番上の一番右のマスに1が入ることをレッツミーで見つけるには，4つの1を見る必要がある．この2つのうち後者の方が一般的に見つけるのが難しいと考えられる．このような手筋の見えにくさを数値化して，同じ手筋でも見えにくさによって違う点数を取るようにすれば，より精度が高い難易度点数判定ソルバーが作成できるかもしれない．
